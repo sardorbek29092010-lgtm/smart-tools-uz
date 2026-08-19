@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Tools UZ — Bepul Online Vositalar</title>
+
+    <meta name="description"
+          content="Smart Tools UZ — kalkulyator, konvertor, yosh hisoblagich va parol generatori. Barcha bepul vositalar bir joyda.">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <button class="theme-btn" onclick="darkMode()">
+    🌙
+</button>
+    <nav class="navbar">
+    <div class="nav-logo">⚡ Smart Tools UZ</div>
+
+    <div class="nav-links">
+        <a href="#bosh">Bosh sahifa</a>
+        <a href="#vositalar">Vositalar</a>
+        <a href="#haqida">Biz haqimizda</a>
+    </div>
+</nav>
+    <!-- HEADER -->
+    <header id="bosh">
+        <div class="header-content">
+
+            <div class="logo">⚡ Smart Tools UZ</div>
+
+            <h1>Bepul foydali vositalar</h1>
+
+            <p>
+                Kundalik kerak bo‘ladigan online vositalar —
+                tez, bepul va qulay.
+            </p>
+
+        </div>
+    </header>
+
+
+    <!-- ASOSIY QISM -->
+    <main>
+
+        <section class="tools"  id="vositalar">
+
+            <!-- KALKULYATOR -->
+            <div class="tool">
+
+                <div class="tool-icon">🧮</div>
+
+                <h2>Kalkulyator</h2>
+
+                <p>
+                    Oddiy hisob-kitoblarni tez va oson bajaring.
+                </p>
+
+                <div class="tool-body">
+
+                    <input
+                        type="number"
+                        id="son1"
+                        placeholder="1-son"
+                    >
+
+                    <select id="amal">
+                        <option value="+">＋ Qo‘shish</option>
+                        <option value="-">− Ayirish</option>
+                        <option value="*">× Ko‘paytirish</option>
+                        <option value="/">÷ Bo‘lish</option>
+                    </select>
+
+                    <input
+                        type="number"
+                        id="son2"
+                        placeholder="2-son"
+                    >
+
+                    <button onclick="hisobla()">
+                        Hisoblash →
+                    </button>
+
+                    <div class="result">
+                        <span>Natija</span>
+                        <strong id="natija">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- KONVERTOR -->
+            <div class="tool">
+
+                <div class="tool-icon">🔄</div>
+
+                <h2>Konvertor</h2>
+
+                <p>
+                    O‘lchov birliklarini bir-biriga o‘zgartiring.
+                </p>
+
+                <div class="tool-body">
+
+                    <input
+                        type="number"
+                        id="miqdor"
+                        placeholder="Miqdor"
+                    >
+
+                    <select id="birlik">
+                        <option value="gbmb">GB → MB</option>
+                        <option value="mbgb">MB → GB</option>
+                        <option value="kggram">KG → Gram</option>
+                        <option value="gramkg">Gram → KG</option>
+                    </select>
+
+                    <button onclick="konvertor()">
+                        Konvertatsiya →
+                    </button>
+
+                    <div class="result">
+                        <span>Natija</span>
+                        <strong id="konvertorNatija">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- YOSH HISOBLAGICH -->
+            <div class="tool">
+
+                <div class="tool-icon">🎂</div>
+
+                <h2>Yosh hisoblagich</h2>
+
+                <p>
+                    Tug‘ilgan sanangiz orqali yoshingizni hisoblang.
+                </p>
+
+                <div class="tool-body">
+
+                    <input
+                        type="date"
+                        id="tugilganSana"
+                    >
+
+                    <button onclick="yoshHisobla()">
+                        Yoshimni hisoblash →
+                    </button>
+
+                    <div class="result">
+                        <span>Natija</span>
+                        <strong id="yoshNatija">—</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAROL GENERATOR -->
+            <div class="tool">
+
+                <div class="tool-icon">🔐</div>
+
+                <h2>Parol generator</h2>
+
+                <p>
+                    Tasodifiy kuchli parol yarating.
+                </p>
+
+                <div class="tool-body">
+
+                    <input
+                        type="number"
+                        id="parolUzunligi"
+                        value="12"
+                        min="6"
+                        max="30"
+                        placeholder="Parol uzunligi"
+                    >
+
+                    <button onclick="parolYarat()">
+                        🔑 Parol yaratish
+                    </button>
+
+                   <div class="password-box">
+    <input
+        type="text"
+        id="parolNatija"
+        readonly
+        placeholder="Parol shu yerda chiqadi"
+    >
+
+    <button onclick="parolNusxala()">
+        📋 Nusxalash
+    </button>
+</div> 
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer id="haqida">
+
+        <p>⚡ Smart Tools UZ</p>
+
+        <span>
+            Bepul online vositalar © 2026
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
