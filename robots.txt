@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sardorbek29092010-lgtm.github.io/smart-tools-uz/sitemap.xml
