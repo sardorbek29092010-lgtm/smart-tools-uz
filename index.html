@@ -221,6 +221,200 @@
                 </div>
 
             </div>
+            <!-- 💰 VALYUTA KONVERTORI -->
+<div class="tool">
+
+    <div class="tool-icon">💰</div>
+
+    <h2>Valyuta konvertori</h2>
+
+    <p>
+        50+ valyutani avtomatik kurs bilan bir-biriga o‘giring.
+    </p>
+
+    <div class="tool-body">
+
+        <!-- MIQDOR -->
+        <input
+            type="number"
+            id="valyutaMiqdor"
+            placeholder="Miqdor"
+            min="0"
+            step="any"
+        >
+
+        <!-- QIDIRUV: 1-VALYUTA -->
+        <input
+            type="text"
+            id="fromSearch"
+            placeholder="🔍 Valyutani qidiring..."
+            autocomplete="off"
+            oninput="valyutaQidir('fromSearch', 'valyutaFrom')"
+        >
+
+        <!-- 1-VALYUTA -->
+        <select id="valyutaFrom">
+
+            <option value="UZS">🇺🇿 UZS — O‘zbekiston so‘mi</option>
+            <option value="USD">🇺🇸 USD — AQSh dollari</option>
+            <option value="EUR">🇪🇺 EUR — Yevro</option>
+            <option value="RUB">🇷🇺 RUB — Rossiya rubli</option>
+            <option value="GBP">🇬🇧 GBP — Britaniya funti</option>
+            <option value="CNY">🇨🇳 CNY — Xitoy yuani</option>
+            <option value="JPY">🇯🇵 JPY — Yaponiya iyenasi</option>
+            <option value="KRW">🇰🇷 KRW — Janubiy Koreya voni</option>
+            <option value="KZT">🇰🇿 KZT — Qozog‘iston tengesi</option>
+            <option value="TRY">🇹🇷 TRY — Turkiya lirasi</option>
+            <option value="AED">🇦🇪 AED — BAA dirhami</option>
+            <option value="SAR">🇸🇦 SAR — Saudiya riyali</option>
+            <option value="INR">🇮🇳 INR — Hindiston rupiyasi</option>
+            <option value="PKR">🇵🇰 PKR — Pokiston rupiyasi</option>
+            <option value="CAD">🇨🇦 CAD — Kanada dollari</option>
+            <option value="AUD">🇦🇺 AUD — Avstraliya dollari</option>
+            <option value="NZD">🇳🇿 NZD — Yangi Zelandiya dollari</option>
+            <option value="CHF">🇨🇭 CHF — Shveytsariya franki</option>
+            <option value="SEK">🇸🇪 SEK — Shvetsiya kronasi</option>
+            <option value="NOK">🇳🇴 NOK — Norvegiya kronasi</option>
+            <option value="DKK">🇩🇰 DKK — Daniya kronasi</option>
+            <option value="PLN">🇵🇱 PLN — Polsha zlotisi</option>
+            <option value="CZK">🇨🇿 CZK — Chex kronasi</option>
+            <option value="HUF">🇭🇺 HUF — Vengriya forinti</option>
+            <option value="RON">🇷🇴 RON — Ruminiya leyi</option>
+            <option value="BGN">🇧🇬 BGN — Bolgariya levi</option>
+            <option value="UAH">🇺🇦 UAH — Ukraina grivnasi</option>
+            <option value="GEL">🇬🇪 GEL — Gruziya larisi</option>
+            <option value="AZN">🇦🇿 AZN — Ozarbayjon manati</option>
+            <option value="AMD">🇦🇲 AMD — Armaniston drami</option>
+            <option value="ILS">🇮🇱 ILS — Isroil shekeli</option>
+            <option value="EGP">🇪🇬 EGP — Misr funti</option>
+            <option value="ZAR">🇿🇦 ZAR — Janubiy Afrika randi</option>
+            <option value="BRL">🇧🇷 BRL — Braziliya reali</option>
+            <option value="MXN">🇲🇽 MXN — Meksika pesosi</option>
+            <option value="ARS">🇦🇷 ARS — Argentina pesosi</option>
+            <option value="CLP">🇨🇱 CLP — Chili pesosi</option>
+            <option value="COP">🇨🇴 COP — Kolumbiya pesosi</option>
+            <option value="PEN">🇵🇪 PEN — Peru soli</option>
+            <option value="ISK">🇮🇸 ISK — Islandiya kronasi</option>
+            <option value="RSD">🇷🇸 RSD — Serbiya dinori</option>
+            <option value="BAM">🇧🇦 BAM — Bosniya markasi</option>
+            <option value="MAD">🇲🇦 MAD — Marokash dirhami</option>
+            <option value="TND">🇹🇳 TND — Tunis dinori</option>
+            <option value="DZD">🇩🇿 DZD — Jazoir dinori</option>
+            <option value="NGN">🇳🇬 NGN — Nigeriya nayrasi</option>
+            <option value="KES">🇰🇪 KES — Keniya shillingi</option>
+            <option value="THB">🇹🇭 THB — Tailand bati</option>
+            <option value="VND">🇻🇳 VND — Vetnam dongi</option>
+            <option value="MYR">🇲🇾 MYR — Malayziya ringgiti</option>
+            <option value="SGD">🇸🇬 SGD — Singapur dollari</option>
+            <option value="HKD">🇭🇰 HKD — Gonkong dollari</option>
+            <option value="PHP">🇵🇭 PHP — Filippin pesosi</option>
+            <option value="IDR">🇮🇩 IDR — Indoneziya rupiyasi</option>
+
+        </select>
+
+
+        <!-- ALMASHTIRISH -->
+        <button
+            type="button"
+            onclick="valyutaAlmashtir()"
+        >
+            🔄 Almashtirish
+        </button>
+
+
+        <!-- QIDIRUV: 2-VALYUTA -->
+        <input
+            type="text"
+            id="toSearch"
+            placeholder="🔍 Valyutani qidiring..."
+            autocomplete="off"
+            oninput="valyutaQidir('toSearch', 'valyutaTo')"
+        >
+
+        <!-- 2-VALYUTA -->
+        <select id="valyutaTo">
+
+            <option value="UZS">🇺🇿 UZS — O‘zbekiston so‘mi</option>
+            <option value="USD" selected>🇺🇸 USD — AQSh dollari</option>
+            <option value="EUR">🇪🇺 EUR — Yevro</option>
+            <option value="RUB">🇷🇺 RUB — Rossiya rubli</option>
+            <option value="GBP">🇬🇧 GBP — Britaniya funti</option>
+            <option value="CNY">🇨🇳 CNY — Xitoy yuani</option>
+            <option value="JPY">🇯🇵 JPY — Yaponiya iyenasi</option>
+            <option value="KRW">🇰🇷 KRW — Janubiy Koreya voni</option>
+            <option value="KZT">🇰🇿 KZT — Qozog‘iston tengesi</option>
+            <option value="TRY">🇹🇷 TRY — Turkiya lirasi</option>
+            <option value="AED">🇦🇪 AED — BAA dirhami</option>
+            <option value="SAR">🇸🇦 SAR — Saudiya riyali</option>
+            <option value="INR">🇮🇳 INR — Hindiston rupiyasi</option>
+            <option value="PKR">🇵🇰 PKR — Pokiston rupiyasi</option>
+            <option value="CAD">🇨🇦 CAD — Kanada dollari</option>
+            <option value="AUD">🇦🇺 AUD — Avstraliya dollari</option>
+            <option value="NZD">🇳🇿 NZD — Yangi Zelandiya dollari</option>
+            <option value="CHF">🇨🇭 CHF — Shveytsariya franki</option>
+            <option value="SEK">🇸🇪 SEK — Shvetsiya kronasi</option>
+            <option value="NOK">🇳🇴 NOK — Norvegiya kronasi</option>
+            <option value="DKK">🇩🇰 DKK — Daniya kronasi</option>
+            <option value="PLN">🇵🇱 PLN — Polsha zlotisi</option>
+            <option value="CZK">🇨🇿 CZK — Chex kronasi</option>
+            <option value="HUF">🇭🇺 HUF — Vengriya forinti</option>
+            <option value="RON">🇷🇴 RON — Ruminiya leyi</option>
+            <option value="BGN">🇧🇬 BGN — Bolgariya levi</option>
+            <option value="UAH">🇺🇦 UAH — Ukraina grivnasi</option>
+            <option value="GEL">🇬🇪 GEL — Gruziya larisi</option>
+            <option value="AZN">🇦🇿 AZN — Ozarbayjon manati</option>
+            <option value="AMD">🇦🇲 AMD — Armaniston drami</option>
+            <option value="ILS">🇮🇱 ILS — Isroil shekeli</option>
+            <option value="EGP">🇪🇬 EGP — Misr funti</option>
+            <option value="ZAR">🇿🇦 ZAR — Janubiy Afrika randi</option>
+            <option value="BRL">🇧🇷 BRL — Braziliya reali</option>
+            <option value="MXN">🇲🇽 MXN — Meksika pesosi</option>
+            <option value="ARS">🇦🇷 ARS — Argentina pesosi</option>
+            <option value="CLP">🇨🇱 CLP — Chili pesosi</option>
+            <option value="COP">🇨🇴 COP — Kolumbiya pesosi</option>
+            <option value="PEN">🇵🇪 PEN — Peru soli</option>
+            <option value="ISK">🇮🇸 ISK — Islandiya kronasi</option>
+            <option value="RSD">🇷🇸 RSD — Serbiya dinori</option>
+            <option value="BAM">🇧🇦 BAM — Bosniya markasi</option>
+            <option value="MAD">🇲🇦 MAD — Marokash dirhami</option>
+            <option value="TND">🇹🇳 TND — Tunis dinori</option>
+            <option value="DZD">🇩🇿 DZD — Jazoir dinori</option>
+            <option value="NGN">🇳🇬 NGN — Nigeriya nayrasi</option>
+            <option value="KES">🇰🇪 KES — Keniya shillingi</option>
+            <option value="THB">🇹🇭 THB — Tailand bati</option>
+            <option value="VND">🇻🇳 VND — Vetnam dongi</option>
+            <option value="MYR">🇲🇾 MYR — Malayziya ringgiti</option>
+            <option value="SGD">🇸🇬 SGD — Singapur dollari</option>
+            <option value="HKD">🇭🇰 HKD — Gonkong dollari</option>
+            <option value="PHP">🇵🇭 PHP — Filippin pesosi</option>
+            <option value="IDR">🇮🇩 IDR — Indoneziya rupiyasi</option>
+
+        </select>
+
+
+        <!-- HISOBLASH -->
+        <button
+            type="button"
+            onclick="valyutaHisobla()"
+        >
+            💱 Konvertatsiya
+        </button>
+
+
+        <!-- NATIJA -->
+        <div class="result">
+
+            <span>Natija</span>
+
+            <strong id="valyutaNatija">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
          <!-- FOIZ HISOBLAGICH -->
 <div class="tool">
 

@@ -182,3 +182,141 @@ function parolNusxala() {
 
     alert("✅ Parol nusxalandi!");
 }
+
+// FOIZ HISOBLAGICH
+function foizHisobla() {
+
+    const son = Number(document.getElementById("foizSon").value);
+    const foiz = Number(document.getElementById("foizMiqdor").value);
+    const natija = document.getElementById("foizNatija");
+
+    if (isNaN(son) || isNaN(foiz) || son === 0 && foiz === 0) {
+        natija.textContent = "Qiymat kiriting";
+        return;
+    }
+
+    const hisob = (son * foiz) / 100;
+
+    natija.textContent = hisob;
+}
+ // 💰 AVTOMATIK VALYUTA KONVERTORI
+async function valyutaHisobla() {
+
+    const miqdorInput =
+        document.getElementById("valyutaMiqdor");
+
+    const from =
+        document.getElementById("valyutaFrom").value;
+
+    const to =
+        document.getElementById("valyutaTo").value;
+
+    const natija =
+        document.getElementById("valyutaNatija");
+
+    const miqdor = Number(miqdorInput.value);
+
+    if (miqdorInput.value === "" || miqdor < 0) {
+        natija.textContent = "Miqdorni kiriting!";
+        return;
+    }
+
+    if (from === to) {
+
+        natija.textContent =
+            miqdor.toLocaleString("uz-UZ", {
+                maximumFractionDigits: 2
+            }) + " " + to;
+
+        return;
+    }
+
+    natija.textContent = "⏳ Kurs olinmoqda...";
+
+    try {
+
+        const response = await fetch(
+            `https://api.frankfurter.dev/v2/rate/${from}/${to}`
+        );
+
+        if (!response.ok) {
+            throw new Error("Kurs topilmadi");
+        }
+
+        const data = await response.json();
+
+        const hisob = miqdor * data.rate;
+
+        natija.textContent =
+            hisob.toLocaleString("uz-UZ", {
+                maximumFractionDigits: 2
+            }) + " " + to;
+
+    } catch (error) {
+
+        console.error(error);
+
+        natija.textContent =
+            "❌ Kursni olishda xatolik!";
+    }
+}
+
+
+// 🔍 VALYUTA QIDIRUV
+function valyutaQidir(searchId, selectId) {
+
+    const search =
+        document.getElementById(searchId)
+            .value
+            .toLowerCase()
+            .trim();
+
+    const select =
+        document.getElementById(selectId);
+
+    const options =
+        select.querySelectorAll("option");
+
+    options.forEach(option => {
+
+        const text =
+            option.textContent.toLowerCase();
+
+        const value =
+            option.value.toLowerCase();
+
+        option.hidden =
+            !text.includes(search) &&
+            !value.includes(search);
+
+    });
+}
+
+
+// 🔄 VALYUTANI ALMASHTIRISH
+function valyutaAlmashtir() {
+
+    const from =
+        document.getElementById("valyutaFrom");
+
+    const to =
+        document.getElementById("valyutaTo");
+
+    const fromSearch =
+        document.getElementById("fromSearch");
+
+    const toSearch =
+        document.getElementById("toSearch");
+
+    const vaqtincha =
+        from.value;
+
+    from.value = to.value;
+    to.value = vaqtincha;
+
+    fromSearch.value = "";
+    toSearch.value = "";
+
+    valyutaQidir("fromSearch", "valyutaFrom");
+    valyutaQidir("toSearch", "valyutaTo");
+}
